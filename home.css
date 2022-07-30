@@ -382,8 +382,8 @@ div[class*='cut-card'] {
 }
 .cut1 .cut-card-left .content-card {
     width: 85%; 
-    height: auto; 
-    padding: 48px 64px;
+    
+    padding: 32px 48px;
     border-radius: 12px; 
 
     box-shadow: 0 0 20px var(--shadow);
