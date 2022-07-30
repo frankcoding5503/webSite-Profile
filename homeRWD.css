@@ -10,9 +10,7 @@
     .cut1 {
         grid-template-columns: 1fr;
     }
-    .cut1 .cut-card-left .content-card {
-        padding: 38px 56px;
-    }
+
     .cut1 .cut-card-right {
         align-items: center;
         justify-content: center;
@@ -42,7 +40,7 @@
     }
 
     .cut2 .content-card {
-        width: 80%;
+        width: 90%;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 2.5fr;
     
@@ -66,6 +64,7 @@
         --content-Main: 16px;
         --content : 14px; 
     }
+    
  
     .nav {
         position: static;
@@ -88,12 +87,21 @@
 
         box-shadow: none;
     }
-
+    
+    .cut1 {
+        height: auto;
+    }
+    .cut1 .cut-card-left {
+        padding: 32px 16px;
+    }
     .cut1 .cut-card-left .content-card {
-        padding: 18px 32px;
+        padding: 16px 18px;
     }
     .cut1 .cut-card-right {
-        padding: 0 36px;
+        align-items: center;
+        justify-content: center;
+
+        padding: 32px 16px;
     }
     
     .divider {
@@ -104,7 +112,7 @@
     }
 
     .card-gallery {
-        padding: 1vw;
+        padding: 3vw;
     }
     .card-gallery .content-card {
         padding: 1% 2% 0;
@@ -114,36 +122,20 @@
         height: fit-content;
         border: none;
         grid-template-columns: 1fr;
+        row-gap: 5vh;
+        padding: 5vh 0;
     }
     .cut2 .cut-card-left {
-
-        padding-top: 10%;
-        padding-bottom: 5%;
-
         grid-row: 2;
     }
 
     .cut2 .cut-card-right {
-        padding-top: 10%;
-
         grid-row: 1;
         align-items: center;
     }
-    .cut2 .content-card {
-        width: 95%;
-        margin-top: 3%;
-        
-        display: grid;
-        grid-template-columns: 1.2fr 2.5fr;
-    
-        border-radius: 12px;
-        overflow: hidden;
-    
-        box-shadow: 0 0 20px var(--shadow);
-    }
 
     .cut2 .content-card {
-        width: 80%;
+        width: 85%;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 2.5fr;
     
