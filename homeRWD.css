@@ -66,6 +66,7 @@
         --content-Main: 16px;
         --content : 14px; 
     }
+ 
     .nav {
         position: static;
         box-shadow: none;
@@ -89,7 +90,7 @@
     }
 
     .cut1 .cut-card-left .content-card {
-        padding: 32px 48px;
+        padding: 18px 32px;
     }
     .cut1 .cut-card-right {
         padding: 0 36px;
@@ -115,11 +116,13 @@
         grid-template-columns: 1fr;
     }
     .cut2 .cut-card-left {
+
         padding-top: 10%;
         padding-bottom: 5%;
 
         grid-row: 2;
     }
+
     .cut2 .cut-card-right {
         padding-top: 10%;
 
