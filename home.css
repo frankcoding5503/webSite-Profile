@@ -1,0 +1,512 @@
+:root {
+    --light: rgba(248, 239, 186,1.0);
+    --medium:rgba(255, 190, 118, 0.7);
+    --dark: rgba(240, 147, 43, 0.7);
+
+    --contentlight:rgba(255, 255, 255,0.8);
+    --contentdark:rgba(44, 62, 80,0.8);
+
+    --danger: rgba(235, 77, 75, 0.7);
+    --link: rgba(52, 152, 219,1.0);
+    --fine: rgba(123, 237, 159, 0.7);
+    --mountaingreen: rgba(16, 172, 132,0.7);
+    --darkred: rgba(238, 82, 83,0.7);
+
+    --shadow: #ccc;
+
+    --Title-Main : 42px; 
+    --Title-first: 32px;
+    --Title-second: 24px;
+    --content-Main: 20px;
+    --content : 16px; 
+}
+
+h1 {
+    font-size: var(--Title-Main);
+}
+h2 {
+    font-size: var(--Title-first);
+}
+h3 {
+    font-size: var(--Title-second);
+}
+h4 {
+    font-size: var(--content-Main);
+}
+h5 {
+    font-size: var(--content);
+}
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    box-sizing: border-box;
+}
+body {
+    overflow: scroll;
+    overflow-x: hidden;
+
+    letter-spacing: 5px;
+}
+#totop-btn {
+    display: none;
+
+    position: fixed;
+    bottom: 20px;
+    left: 15px;
+
+    width: 50px;
+    height: 50px;
+    background-color: var(--danger);
+
+    opacity: 0.4;
+
+    z-index: 10;
+}
+#totop-btn:hover {
+    opacity: 1;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+a[class='readmore'] {
+    color: var(--link);
+}
+a[class='readmore']:hover {
+    text-decoration: underline;
+}
+
+/* 顏色自定義 */
+.gradient-orange{
+    background-image: linear-gradient(var(--light), var(--dark));
+}
+.gradient-red-totop{
+    background-image: linear-gradient(to top, var(--light), var(--danger));
+}
+.gradient-red-tobottom{
+    background-image: linear-gradient(to bottom, var(--light), var(--danger));
+}
+/*****/
+
+/* 導覽列 */
+.nav {
+    position: sticky;
+    top: 0;
+    
+    background-color: rgba(255, 255, 255,1);
+    width: 100%;
+    height: 55px;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 3px solid var(--dark);
+    box-shadow: 0 4px 5px var(--shadow);
+}
+.nav button {
+    margin: 0 10px 0 0;
+    
+    background-color: white;
+    border: 1px solid var(--medium);
+    
+    color: var(--dark);
+}
+.nav button:hover {
+    background-color: var(--medium);
+    color: var(--contentlight);
+}
+/*****/
+
+/* logo */
+.logo {
+    color: var(--danger);
+    margin-left: 10px;
+}
+/*****/
+
+/* 按鈕 
+只有初步形式，需要額外再個段落定義樣式
+*/
+button {
+    padding: 4px 8px;
+    border-radius: 4px;
+
+    text-align: center;
+    text-decoration: none;
+    border: none;
+}
+/*****/
+
+/* 全頁面容器 
+要自定義每張 view 的高度
+*/
+section[class*='view'] {
+    width: 100%;
+    
+    color: var(--contentdark);
+
+    overflow: hidden;
+    position: relative;
+}
+.view1 {
+    height: 100vh;
+}
+.view1 .bodyPicture {
+    width: 350px;
+    height: 600px;
+
+    position: absolute;
+    bottom: 10%;
+    right: 1%;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+/*****/
+
+/* 
+曲線圖層 
+在 HTML 中定義：
+1. 顏色，可以套用 css 中設定的顏色
+2. 位置
+3. 弧度
+*/
+.curve {
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    
+    z-index: 1;
+}
+/*****/
+
+/* 分隔線圖層 
+在 HTML 中定義：
+1. 位置
+*/
+header {
+    position: relative;
+}
+.divider {
+    background-color: var(--danger);
+    width: 150px;
+    height: 3px;
+}
+.divider::after {
+    content: "";
+    background-color: var(--light);
+
+    position: absolute;
+    right: -25%;
+
+    width: 25px;
+    height: 3px;
+}
+/*****/
+
+/* 優先圖層 */
+.element {
+    position: absolute;
+    z-index: 5;
+}
+/*****/
+
+/* 分隔資訊條 
+要自訂義佈局和高度
+*/
+section[class*='strip-box']{
+    width: 100%;
+
+    display: grid;
+
+    overflow: hidden;
+    position: relative;
+}
+/* 各個卡片 */
+div[class*='strip-card']{
+    padding: 8px 16px;
+}
+/*****/
+
+/* 全頁面容器：二分割 
+要自定義 grid 版型
+*/
+section[class*='cut'] {
+    width: 100%;
+
+    display: grid;
+
+    overflow: hidden;
+    position: relative;
+}
+div[class*='cut-card'] {
+    width: 100%;
+    height: 100%;
+
+    color: var(--contentdark);
+}
+.cut-card-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*****/
+
+/* 內容卡片（自帶四周陰影） 
+1. 要自定義大小
+2. 要自定義背景顏色
+*/
+.content-card {
+    line-height: 1.6;
+    position: relative;
+}
+/*****/
+
+/* strip 1 */
+.strip-box1 {
+    height: 35vh;
+
+    color: var(--contentlight);
+    grid-template-columns: 1fr 1fr 1.5fr;
+}
+.strip-box1 .strip-card1{
+    background-color: var(--danger);
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.7);
+}   
+.strip-box1 .strip-card2{
+    background-color: var(--dark);
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.7);
+}   
+.strip-box1 .strip-card3{
+    background-color: var(--medium);
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.7);
+}   
+/*****/
+
+/* 卡片九宮格 */
+.card-gallery {
+    padding: 5vw;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.25fr 1fr;
+
+    column-gap: 3vw;
+    row-gap: 2vw;
+}
+.card-gallery div:first-child {
+    text-align: center;
+    grid-column: 1 / 4;
+}
+.card-gallery .content-card {
+    border: 2px solid var(--shadow);
+    padding: 0 3% 0;
+}
+.card-gallery a {
+    margin: 10% 0 5%;
+    width: 100%;
+
+    display: flex;
+    justify-content: end;
+}
+/*****/
+
+/* 時間倒數 */
+#daycounter {
+    width: 25vw;
+    min-width: 230px;
+    height: 25vw;
+    min-height: 230px;
+
+    border-radius: 50%;
+
+    background-color: var(--contentdark);
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+}
+#TimeLeft {
+    margin-top: 5%;
+
+    font-style: italic;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+#spinner {
+    width: 26vw;
+    min-width: 239px;
+    height: 26vw;
+    min-height: 239px;
+
+    display: block;
+    position:absolute;
+
+    background-color: transparent;
+
+    border: 4px solid transparent;
+    border-top: 4px solid var(--contentdark);
+    border-radius: 50%;
+
+    z-index: -1;
+
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+}
+/****/
+
+/* cut1 */
+.cut1 {
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+}
+.cut1 .cut-card-right {
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+}
+.cut1 .cut-card-left .content-card {
+    width: 85%; 
+    height: auto; 
+    padding: 48px 64px;
+    border-radius: 12px; 
+
+    box-shadow: 0 0 20px var(--shadow);
+}
+/*****/
+
+/*  cut2 */
+.cut2 {
+    height: 100vh;
+    border-top: 3px solid var(--medium);
+    grid-template-columns: 1fr 1.5fr;
+}
+.cut2 .cut-card-right {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    
+    flex-direction: column;
+}
+.cut2 .content-card {
+    width: 95%;
+    margin-top: 3%;
+    
+    display: grid;
+    grid-template-columns: 1.2fr 2.5fr;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 0 20px var(--shadow);
+}
+.ImageBox {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.ContentBox {
+    height: 100%;
+    padding: 5% 5%;
+}
+.cut2 .content-card a {
+    width: 100%;
+    height: 40px;
+    
+    display: flex;
+    justify-content: end;
+}
+.cut2 .content-card button {
+    width: 30%;
+    height: 100%;
+
+    border: 2px solid var(--danger);
+
+    background-color: var(--danger);
+    color: white;
+}
+.cut2 .content-card button:hover {
+    background-color: white;
+    color: var(--danger);
+}
+.cut2 .content-card .DateRemind {
+    width: 40%;
+    min-width: 160px;
+
+    height: 45px;
+    background-color: white;
+
+    margin-bottom: 3%;
+    
+    color: var(--danger);
+    line-height: 45px;
+    text-align: center;
+
+    border: 2px solid var(--danger);
+    border-radius: 8px;
+    
+}
+/*****/
+
+/* strip 2(footer) */
+.strip-box2 {
+    height: 30vh;
+
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 3fr 1fr;
+} 
+.strip-box2 div[class*=strip-card] {
+    background-color: var(--contentdark);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    color: var(--contentlight);
+}
+.strip-box2 .strip-card4 {
+    grid-row: 2 / 4;
+    grid-column: 1 / 4;
+
+    border-top: 2px solid var(--contentlight);
+}
+.strip-box2 .strip-card4 a {
+    color: var(--contentlight);
+}
+.ContactIcon {
+    margin-top: 5%;
+
+    display: flex;
+    flex-direction:row;
+}
+.ContactIcon a{
+    margin: 0 8px;
+}
+
+/*****/
+
+/* 動畫 */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/*****/
