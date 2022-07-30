@@ -372,21 +372,25 @@ div[class*='cut-card'] {
     grid-template-columns: 1fr 1fr;
 }
 .cut1 .cut-card-right {
-    background-color: transparent;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     position: relative;
+    
 }
 .cut1 .cut-card-left .content-card {
     width: 85%; 
-    
+
     padding: 32px 48px;
     border-radius: 12px; 
 
     box-shadow: 0 0 20px var(--shadow);
+}
+.cut1 .cut-card-right .content-card {
+    width: 85%;
+    margin-top: 5%;
 }
 /*****/
 
@@ -404,7 +408,7 @@ div[class*='cut-card'] {
     flex-direction: column;
 }
 .cut2 .content-card {
-    width: 95%;
+    width: 85%;
     margin-top: 3%;
     
     display: grid;
